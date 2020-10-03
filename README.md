@@ -381,6 +381,177 @@ check - Runs all checks.
 jacocoTestCoverageVerification - Verifies code coverage metrics based on specified rules for the test task.
 jacocoTestReport - Generates code coverage report for the test task.
 test - Runs the unit tests.
+
+build :
+
+> Configure project :
+
+> Task :scaladoc
+model contains 57 documentable templates
+
+> Task :test
+
+io.github.bkosaraju.inferencer.InferencerTests
+
+  Test loadLocalappProps : Test to be able to load the local properties PASSED
+  Test loadLocalappProps : Test to be able to load the non Existed local properties PASSED
+  Test loadCustomProperties : remove hdfs Properties PASSED
+  Test loadCustomProperties : remove hdfs Properties - unknown path PASSED
+  Test loadCustomProperties : remove hdfs Properties - Empty path PASSED
+  Test Context : Context Creation for SQL PASSED
+  Test loadEnvVars : load String parameters to Map PASSED
+  Test loadEnvVars : Loading the empty string should produce zero element Array PASSED
+  Test convNonStdDateTimes : Test Non Standard data types being converted to Standard date and time values - check the count PASSED
+  Test convNonStdDateTimes : Test Non Standard data types being converted to Standard date and time values - check data PASSED
+  Test convNonStdDateTimes : Test Non Standard data types being converted to Standard date and time values - check results PASSED
+  Test dropdwsCols : drop the extended columns from target schema to generate source schema - non Empty values PASSED
+  Test dropdwsCols : drop the extended columns from target schema to generate source schema -  Empty values PASSED
+  Test dropdwsCols : Unable to drop the dws columns and raise exception in case if there is any issue with source schema PASSED
+  Test stringToMap : Test to be able to convert input params String to Map PASSED
+  Test stringToMap : Unable to convert given string into a Map as that was not in valid keyvalue pair format(k1=v1) PASSED
+  Test getStgSchema : Derive the source schema from curated schema - check for non mapped column PASSED
+  Test getStgSchema : Derive the source schema from curated schema - check for mapped column PASSED
+  Test getStgSchema : Unable to generate staging schema and raise exception in case if there is any issue with source schema PASSED
+  Test getTargetSelList : Generate the Schema driven SQL PASSED
+  Test getTargetSelList : Generate the Schema driven SQL with excluded non primitive types PASSED
+  Test getTargetSelList : Exception in case if not be able extract target selection list PASSED
+  Test loadStdDF : load the CSV file to a dataframe - record Count PASSED
+  Test loadStdDF : load the Json file to a dataframe PASSED
+  Test loadStdDF : load the Json file to a dataframe using inferTargetSchema option PASSED
+  Test loadStdDF : load the orc file to a dataframe PASSED
+  Test loadStdDF : load the CSV file to a dataframe - Null values check PASSED
+  Test loadStdDF : Unable to load the data into dataframe and throws exception in case if input schema is differ to the specified schema PASSED
+  Test loadStdDF : load CSV file with no reader options PASSED
+  Test amendDwsCols : Add Audit columns to source dataframe - Function check PASSED
+  Test amendDwsCols : Add Audit columns to source dataframe - Function check with empty keys PASSED
+  Test amendDwsCols : Add Audit columns to source dataframe - Column count check PASSED
+  Test amendDwsCols : Add Audit columns to source dataframe - Return value check PASSED
+  Test amendDwsCols : Exception in case if not be able to amend extra columns PASSED
+  Test srcToTgtColRename : rename the source columns to target columns PASSED
+  Test srcToTgtColRename : Unable to rename column and throws exception in case if there is any issue with given input map PASSED
+  Test srcToTgtColSchemaChange : Rename the source columns to target columns - Empty Columns PASSED
+  Test srcToTgtColSchemaChange : Rename the source columns to target columns - Update Column Names PASSED
+  Test srcToTgtColSchemaChange : Rename the source columns to target columns - Update Column Names - empty Map PASSED
+  Test srcToTgtColSchemaChange : Unable to rename column and throws exception in case if there is any issue with given input schema PASSED
+  Test loadTableVars : extract the table propertise from catalogue PASSED
+  Test loadTableVars : extarct table properties from catalogue - exception-parquet PASSED
+  Test loadTableVars : extarct table properties from catalogue - exception - jsonFormat PASSED
+  Test loadTableVars : extarct table properties from catalogue - exception - Avor Format PASSED
+  Test loadTableVars : extarct table properties from catalogue - exception - csv Format PASSED
+  Test loadTableVars : extarct table properties from catalogue - exception - text Format PASSED
+  Test loadTableVars : Unable to load the table properties and throws exception in case if provided serde library is not in listed serde PASSED
+  Test removeHdfsData : remove hdfs path PASSED
+  Test removeHdfsData : remove hdfs path - not to delete root path accidentally PASSED
+  Test removeHdfsData : remove hdfs path - delete the tableURI PASSED
+  Test removeHdfsData : Unable remove specified path(non existed) and throws exception in case if there is any with application functions PASSED
+  Test removeHdfsData : Unable remove specified path(exception test) and throws exception in case if there is any with application functions PASSED
+  Test loadDataFile : load data file into row of RDD - no clence PASSED
+  Test loadDataFile : load data file into row of RDD - with clensing PASSED
+  Test loadDataFile : load data file into row of RDD - read the file in binary format PASSED
+  Test loadDataFile : load data file into row of RDD - read the file in binary format - default options PASSED
+  Test loadDataFile : load data file into row of RDD - Raise an exception in case if there is any issue with loading the file PASSED
+  Test writeHiveTable : Test to write Data Into Hive (overwrite) PASSED
+  Test writeHiveTable : Test to write Data Into Hive (append) PASSED
+  Test writeHiveTable : Test to write Data Into Hive - partition - append PASSED
+  Test writeHiveTable : Test to write Data Into Hive - partition - overwrite PASSED
+  Test writeHiveTable : Unable to write to the table and throws exception in case if table does not exists PASSED
+  Test loadTableandRegister : Load Hive table to a dataframe PASSED
+  Test loadTableandRegister : Load Hive table to a dataframe - with Temp View PASSED
+  Test loadTableandRegister : Unable to load Table and throws exception for given table if a table and database not existed PASSED
+  Test loadTableandRegister : Unable to load table and throws exception for given table if a table not existed PASSED
+  Test loadTableandRegister : Unable to load table and throws exception for given table if a database not existed PASSED
+  Test loadSchemaTests : able to extract the schema from a catalogue PASSED
+  Test loadSchema : Unable to load schema and throws exception for given table if a table and database not existed PASSED
+  Test loadSchema : Unable to load schema and throws exception for given table if a table not existed PASSED
+  Test loadSchema : Unable to load schema and throws exception for given table if a database not existed PASSED
+  Test loadSchema: able to create H2 DB Instance and create table for testing purpose PASSED
+  Test loadSchema: able to read data from RDBMS Data source PASSED
+  Test loadSchema: Exception while unable to read schema from Database PASSED
+  Test getCuratedDF : load the CSV file to a dataframe PASSED
+  Test getCuratedDF : load the binary file to a dataframe PASSED
+  Test getCuratedDF : load the binary file to a dataframe - >5% invalid dataTypes PASSED
+  Test getCuratedDF : load the json file to a dataframe PASSED
+  Test getCuratedDF : load the json file to a dataframe with target column rename in congention with format change PASSED
+  Test getCuratedDF : load the siiam binary file to a dataframe PASSED
+  Test getCuratedDF : Unable curate the table and throws exception in case if there is any with application functions PASSED
+  Test getCuratedDF : load the json file with infer schema to a dataframe PASSED
+  Test loadCuratedTable : load the curated Table from Binary File PASSED (33s)
+  Test loadCuratedTable : load the curated Table from Json File PASSED (23s)
+  Test loadCuratedTable : load the curated Table under the throshold record counts PASSED (20.3s)
+  Test loadCuratedTable : load the json file to a dataframe PASSED
+  Test loadCuratedTable : load the CSV with tagged columns to a dataframe PASSED
+  Test loadCuratedTable : load the CSV with tagged columns to a dataframe with Runtime columns PASSED
+  Test loadCuratedTable : load the CSV with tagged columns to a dataframe with Runtime columns with date Format YYYYDDMM Format PASSED
+  Test loadCuratedTable : load the data into target bucket in case if error threshold is under specified limit PASSED (19.5s)
+  Test loadCuratedTable : load the data into error bucket in case if error threshold is under specified limit for faulty records PASSED
+  Test driver : Able to run End to End Application PASSED
+  Test driver : Able to run End to End Application with spark application extra columns PASSED
+  Test driver : Able to run End to End Application with spark application extra columns defaulted to NULL PASSED
+  Test driver : CSV file with no source formats specified while reading non standard dates should use default Spark - CSV parser behaviour PASSED
+  Test driver : Unable to commence execution and throws exception incase if given input parameters are not valid(too few) PASSED
+  Test driver : Quoted Data with pipe separation PASSED (17.9s)
+  Test driver : load the default data - not override the current data incase if data is present in source PASSED (17.2s)
+  Test driver : Record filter test - select with start of record PASSED
+  Test driver : Record filter test - select with end of record PASSED
+  Test driver : Record filter test - select with start and end PASSED
+  Test driver : Fixed width file with variable record header length PASSED
+  Test driver : Fixed width file with variable record header length with custom header format PASSED
+  Test dataTypeValidationTests : Able to throw the exception in case of reaching the threshold data quality >4% invalid records PASSED
+  Test getLatestDataSetsTest : Validating the result for given overwrite Mode PASSED
+  Test getLatestDataSetsTest : Validating the result for given overwrite Mode with orc and writeMode append PASSED
+  Test getLatestDataSetsTest : Validating the result for given overwrite Mode with orc and writeMode overWrite PASSED
+  Test getLatestDataSetsTest : Validating the result for given overwrite Mode with parquet and writeMode append PASSED
+  Test getLatestDataSetsTest : Validating the result for given overwrite Mode with parquet and writeMode overWrite PASSED
+  Test getLatestDataSetsTest : Validating the result for given overwrite Mode with avro and writeMode append PASSED
+  Test getLatestDataSetsTest : Validating the result for given overwrite Mode with avro and writeMode overWrite PASSED
+  Test getLatestDataSetsTest : Validating the result for given overwrite Mode with com.databricks.spark.avro and writeMode append PASSED
+  Test getLatestDataSetsTest : Validating the result for given overwrite Mode with com.databricks.spark.avro and writeMode overWrite PASSED
+  Test getLatestDataSetsTest : Able to throw the exception in case of source Directory not existed PASSED
+  Test extractTaggedColumns : Extract the tokens out of the file Name PASSED
+  Test extractTaggedColumns : Exception in case of not been able to extract in case of token matching is not possible PASSED
+  Test extractTaggedColumns : Exception in case of not enough tokens matched for the given senario PASSED
+  Test extractTaggedColumns : log a warinig and continue in case few tokens requested than the selecetd PASSED
+  Test loadRDD : Unable to load the file and throws exception in case if it is not existed PASSED
+  Test loadRDD : Unable to load the file and throws exception in case if input directory has empty files PASSED
+  Test archiveData : Move the processed data into archive area PASSED
+  Test archiveData : Exception in case if it could be able to move the processed data into archive area due to source issue PASSED
+  Test archiveData : Exception in case if not be able to move the processed data into archive area PASSED
+  Test archiveData : Move the processed data into archive area - in overwrite mode move all files in processing directory PASSED
+  Test getArrayColList : Test to Extract Arrays Items form Schema PASSED
+  Test flattenColList : Process non Nested Structure PASSED
+  Test flattenColList : Flatten the Nested Structure PASSED
+  Test flattenColList : Flatten the Nested Structure - with PFX PASSED
+  Test flattenColList : Flatten the Multy Nested Structure PASSED
+  Test flattenColList : Unable to flatten the given columns in case if input schema is empty PASSED
+  Test explodeDF : Clean the null fields in array elements and explode the DF PASSED
+  Test getTargetValidationFilter : Generate the Schema driven SQL for Filter Condition PASSED
+  Test getTargetValidationFilter : Exception in case if not be able extract target validation filter PASSED
+  Test getTargetValidationFilter : Empty schema PASSED
+  Test isSchemaSame : Schema Comparision Utility - equal context PASSED
+  Test isSchemaSame : Schema Comparision Utility - not equal context PASSED
+  Test isSchemaSame : Schema Comparision Utility - in order items PASSED
+  Test isSchemaSame : select only subset of total columns - sortAndConv PASSED
+  Test removeHeaderAndFooter : remove the header from text/binary/fixedwidth files PASSED
+  Test removeHeaderAndFooter : remove the footer from text/binary/fixedwidth files PASSED
+  Test removeHeaderAndFooter : remove the header and footer from text/binary/fixedwidth files PASSED
+  Test removeHeaderAndFooter : remove the header (of size 10 rows ) from text/binary/fixedwidth files PASSED
+  Test removeHeaderAndFooter : remove the footer (of size 10 rows ) from text/binary/fixedwidth files PASSED
+  Test removeHeaderAndFooter : remove the header(1 row) and footer (of size 10 rows) from text/binary/fixedwidth files PASSED
+  Test removeHeaderAndFooter : remove the header from text/binary/fixedwidth files (with other header option (fales)) PASSED
+  Test removeHeaderAndFooter : remove the header from text/binary/fixedwidth files (with other header option (fales) and headerLength - 5) PASSED
+  Test removeHeaderAndFooter : remove the header from text/binary/fixedwidth files (with no header option) PASSED
+  Test removeHeaderAndFooter : raise an exeception while remove the header PASSED
+  Test GetExternalSchemaTests : ReadSchema from DDL PASSED
+  Test GetExternalSchemaTests : ReadSchema from AvroSchema PASSED
+  Test GetExternalSchemaTests : ReadSchema from JsonSchema PASSED
+  Test GetExternalSchemaTests : Raise Exception incase if not able to produce schema for given input PASSED
+  Test UnZipFile : Unzip the content and load as RDD PASSED
+  Test headerToColumns : Exception while unable to load header from file PASSED
+  Test getCuratedDF : load the Cobol file to a dataframe PASSED
+
+SUCCESS: Executed 155 tests in 3m 12s
+
+
 ```
 
 ## Usage Instructions : 
