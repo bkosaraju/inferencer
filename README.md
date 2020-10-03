@@ -559,8 +559,11 @@ SUCCESS: Executed 155 tests in 3m 12s
 spark-submit <Spark Options> <Application JAR> <ARG1> <ARG2> <ARG3>
 
 **Application JAR** : built Jar which compiled out of this source code.
-**ARG1** : Properties file consists of the above mentioned properties. This file must be placed in HDFS as it can  be accessed from anywhere where the driver git initiated 
+
+**ARG1** : Properties file consists of the above mentioned properties. This file must be placed in HDFS as it can  be accessed from anywhere where the driver git initiated
+ 
 **ARG2** : Amended Audit column list as key value pairs mapped using  `=` ex : ```src_date=2017-12-31, load_timestamp=2017-12-31 10:15:05,ingestion_id=1524369```
+
 **ARG3** : Extract Run directory to be amended after the source path is reconstructed.
  
 ## Aditional Info :
