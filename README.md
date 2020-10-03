@@ -287,6 +287,35 @@ please note that target column should be defined as string as after encryption i
 **encryptionKey**
 key to encrypt and decrypt columns.
 
+
+Where can I get the latest release?
+-----------------------------------
+You can download source from [SCM](https://github.com/bkosaraju/utils).
+
+Alternatively you can pull binaries from the central Maven repositories:
+For mvn: 
+```xml
+<dependency>
+  <groupId>io.github.bkosaraju</groupId>
+  <artifactId>inferencer_#ScalaVariant#</artifactId>
+  <version>#Version#</version>
+</dependency>
+ 
+<!--Fat/ Assembly Jar-->
+<dependency>
+  <groupId>io.github.bkosaraju</groupId>
+  <artifactId>inferencer_#ScalaVariant#</artifactId>
+  <version>#Version#</version>
+  <classifier>all</classifier>
+</dependency>
+
+```
+for Gradle: 
+
+```groovy
+    api group: "io.github.bkosaraju", name: "inferencer_$scalaVariant", version: "$Version"
+```
+
 ## Build Instructions :
 
 **Test execution** :
