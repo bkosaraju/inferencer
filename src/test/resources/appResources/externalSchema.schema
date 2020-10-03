@@ -1,0 +1,4 @@
+per string,
+post_date date,
+accountId bigint,
+deviation decimal(10,2)

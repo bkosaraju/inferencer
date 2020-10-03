@@ -1,0 +1,82 @@
+/*
+ *  Copyright (C) 2019-2020 bkosaraju
+ *  All Rights Reserved.
+ *  Licensed to the Apache Software Foundation (ASF) under one
+ *  or more contributor license agreements.  See the NOTICE file
+ *  distributed with this work for additional information
+ *  regarding copyright ownership.  The ASF licenses this file
+ *  to you under the Apache License, Version 2.0 (the
+ *  "License"); you may not use this file except in compliance
+ *  with the License.  You may obtain a copy of the License at
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *  Unless required by applicable law or agreed to in writing,
+ *  software distributed under the License is distributed on an
+ *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ *  KIND, either express or implied.  See the License for the
+ *  specific language governing permissions and limitations
+ *  under the License.
+ */
+
+package io.github.bkosaraju.inferencer.SchemaFlattnerTests
+
+import io.github.bkosaraju.inferencer.jsonFlattenerTests
+import io.github.bkosaraju.inferencer.{AppInterface, appFunctionTests, jsonFlattenerTests}
+import org.apache.spark.sql.types.{ArrayType, StringType, StructField, StructType}
+
+trait FlattenColListTests extends AppInterface {
+
+  private val tschema = StructType(Seq(
+    StructField("aElement1", ArrayType(StringType, true), true),
+    StructField("aElement2", ArrayType(StringType, true), true),
+    StructField("nonAElement", StringType, true))
+  )
+
+  test("flattenColList : Process non Nested Structure", jsonFlattenerTests) {
+    assertResult(Array("`aElement1`", "`aElement2`", "`nonAElement`")) {
+      jf.flattenColList(tschema)
+    }
+  }
+
+  private val nestedSchema = StructType(Array(
+    StructField("aElement1", StructType(Array(StructField("iaElement1", StringType, true), StructField("iaElement2", StringType, true))), true),
+    StructField("aElement2",StringType,true))
+  )
+
+  test("flattenColList : Flatten the Nested Structure", jsonFlattenerTests) {
+    assertResult(Array("`aElement1`.`iaElement1`", "`aElement1`.`iaElement2`","`aElement2`")) {
+      jf.flattenColList(nestedSchema)
+    }
+  }
+
+  test("flattenColList : Flatten the Nested Structure - with PFX", jsonFlattenerTests) {
+    assertResult(Array("Prnt-`aElement1`.`iaElement1`", "Prnt-`aElement1`.`iaElement2`","Prnt-`aElement2`")) {
+      jf.flattenColList(nestedSchema,"Prnt-")
+    }
+  }
+
+
+  private val nest = StructType(
+    Array( StructField("iaElement1", StringType, true)
+      , StructField("aaType",StructType(Array(StructField("iaElement1", StringType, true),
+        StructField("iaaElement1",StructType(
+          Array(StructField("iaElement1", StringType, true), StructField("iaElement2", StringType, true))),true),
+        StructField("iaElement2", StringType, true))))
+    )
+  )
+
+  test("flattenColList : Flatten the Multy Nested Structure", jsonFlattenerTests) {
+    assertResult(Array("`iaElement1`", "`aaType`.`iaElement1`", "`aaType`.`iaaElement1`.`iaElement1`", "`aaType`.`iaaElement1`.`iaElement2`", "`aaType`.`iaElement2`")) {
+      jf.flattenColList(nest)
+    }
+  }
+
+  private val emptyStruct = StructType(Seq())
+
+  test("flattenColList : Unable to flatten the given columns in case if input schema is empty", appFunctionTests) {
+    intercept[Exception] {
+      jf.flattenColList(emptyStruct)
+    }
+  }
+
+}
+

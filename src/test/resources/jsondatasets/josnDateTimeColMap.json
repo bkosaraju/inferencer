@@ -1,0 +1,14 @@
+[
+  {
+    "src_timestamp": "2018/30/01 10:15:02",
+    "src_date": "2018-12-01",
+    "Keycol": "f5466a82-4de4-4dcf-915c-dfe41a4f8c86",
+    "ValueCol": "res1"
+  },
+  {
+    "src_timestamp": "2018/31/01 10:15:03",
+    "src_date": "2018-12-01",
+    "Keycol": "f5466a82-4de4-4dcf-915c-dfe41a4f8c86",
+    "ValueCol": "Res2"
+  }
+]

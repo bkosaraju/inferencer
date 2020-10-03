@@ -1,0 +1,13 @@
+.project
+.settings/
+.vscode/
+.idea
+.gradle
+.travis.yml
+build/
+.idea
+VERSION
+derby.log
+metastore_db/
+bash.exe.stackdump
+
