@@ -290,7 +290,7 @@ key to encrypt and decrypt columns.
 
 Where can I get the latest release?
 -----------------------------------
-You can download source from [SCM](https://github.com/bkosaraju/utils).
+You can get source from [SCM](https://github.com/bkosaraju/inferencer).
 
 Alternatively you can pull binaries from the central Maven repositories:
 For mvn: 
