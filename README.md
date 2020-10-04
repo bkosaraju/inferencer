@@ -2,8 +2,11 @@
 
 inference noun:
 
-A guess that you make or an opinion that you form based on the information that you have:
+A guess that you make or an opinion that you form based on the information that you have
 
+Inferencer is a Spark library for which curate files through given input parameters and load thenm into target, source can be HDFS,S3,Local filesystem to another distributed/local filesystem with Schema retained formats(preferred parquet/ORC/Avro)
+
+in case of target is a table, the library automatically extract the target schema and infer the same, in case of target is a distributed or local filesystem, we need to pass the schema as ddl,avro,json format.
 
 The following application will load the data into target using the given input parameters.
 
@@ -54,7 +57,7 @@ All the above parameters will be used to construct the source file/directory pat
 
 Target Database Name where the curated data is placed.
 
-**targetTable** = s_evt_act
+**targetTable** = tgt_table
 
 Target Table Name where the curated data is placed.
 
@@ -265,9 +268,9 @@ it extracts the tags based on the grouped patterns on the order it mapped and lo
 
 in case of more columns present than tags there will be an exception and job will be aborted.
 
-**customTransformationOptions** = src_sys='IMF'
+**customTransformationOptions** = src_sys='test_source_system'
 Adds the custom logic into filelds should be populated into tables.
-example : src_sys='IMF'
+example : src_sys='test_source_system'
 
 this particular property can be used to set the default variables to table in case if source is not sending them.
 
@@ -560,11 +563,12 @@ spark-submit <Spark Options> <Application JAR> <ARG1> <ARG2> <ARG3>
 
 **Application JAR** : built Jar which compiled out of this source code.
 
-**ARG1** : Properties file consists of the above mentioned properties. This file must be placed in HDFS as it can  be accessed from anywhere where the driver git initiated
- 
+**ARG1** : Properties file consists of the above mentioned properties. This file must be placed in Distributed filesystem(s3/hdfs) as it can  be accessed from anywhere where the driver git initiated
+in case of local file system we can add them to --fies option so that spark will distribute them to executors.
+
 **ARG2** : Amended Audit column list as key value pairs mapped using  `=` ex : ```src_date=2017-12-31, load_timestamp=2017-12-31 10:15:05,ingestion_id=1524369```
 
-**ARG3** : Extract Run directory to be amended after the source path is reconstructed.
+**ARG3** : Extract Run directory to be amended after the source path is re-constructed.
  
 ## Aditional Info :
 
