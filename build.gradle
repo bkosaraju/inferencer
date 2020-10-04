@@ -21,7 +21,7 @@ buildscript {
     ext.scalaVariant = "2.12"
     ext.sparkVersion = "3.0.0"
     ext.awsSDKVersion = "1.11.721"
-    ext.imfutilsVersion = "1.02"
+    ext.utilsVersion = "1.02"
     repositories {
         maven {
             url "${gradle.artifactoryUrl}"
@@ -100,7 +100,7 @@ dependencies {
     compileOnly group: "org.apache.spark", name:  "spark-hive_$scalaVariant", version: "$sparkVersion"
 
     //IMF Utilities
-    api group: "io.github.bkosaraju", name: "utils_$scalaVariant", version: "$imfutilsVersion"
+    api group: "io.github.bkosaraju", name: "utils_$scalaVariant", version: "$utilsVersion"
 
     //External Parsers
     api group: 'org.apache.spark', name: "spark-avro_$scalaVariant", version: '3.0.1'
