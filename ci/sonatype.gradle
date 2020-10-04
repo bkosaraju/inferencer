@@ -25,15 +25,15 @@ uploadArchives {
             }
 
             pom.project {
-                name 'utils'
+                name 'inferencer'
                 packaging 'jar'
                 // optionally artifactId can be defined here
-                description 'Utils is a library for Application collection of utilities for trigger and track spark Application in Kubernetes, Databricks and EMR with some additinoal functions'
-                url 'https://bkosaraju.github.io/utils'
+                description 'inferencer is a Spark library for which curate files through given input parameters and load thenm into target, source can be HDFS,S3,Local filesystem to another distributed/local filesystem with Schema retained formats(preferred parquet/ORC/Avro)'
+                url 'https://bkosaraju.github.io/inferencer'
 
                 scm {
-                    connection 'scm:git:https://github.com/bkosaraju/utils.git'
-                    url 'https://github.com/bkosaraju/utils'
+                    connection 'scm:git:https://github.com/bkosaraju/inferencer.git'
+                    url 'https://github.com/bkosaraju/inferencer'
                 }
 
                 licenses {
