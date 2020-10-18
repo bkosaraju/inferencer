@@ -1,5 +1,11 @@
-[![bkosaraju](https://circleci.com/gh/bkosaraju/inferencer.svg?style=svg)](https://app.circleci.com/pipelines/github/bkosaraju/inferencer)
+[![Circle CI](https://circleci.com/gh/bkosaraju/inferencer.svg?style=shield)](https://app.circleci.com/pipelines/github/bkosaraju/inferencer)
 [![codecov](https://codecov.io/gh/bkosaraju/inferencer/branch/development/graph/badge.svg?token=QHHLFEEHE2)](https://codecov.io/gh/bkosaraju/inferencer)
+[![Apache license](https://img.shields.io/github/issues/bkosaraju/inferencer.svg
+)](https://github.com/bkosaraju/inferencer/issues)
+[![Apache license](https://img.shields.io/crates/l/Apache?color=green&label=Apache%202.0&logo=apache&logoColor=red
+)](https://www.apache.org/licenses/LICENSE-2.0.txt)
+[![Version](https://img.shields.io/github/v/tag/bkosaraju/inferencer?label=Current%20Version
+)]()
 
 # Inferencer a.k.a DataCurator
 
