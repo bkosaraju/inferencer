@@ -4,8 +4,7 @@
 )](https://github.com/bkosaraju/inferencer/issues)
 [![Apache license](https://img.shields.io/crates/l/Apache?color=green&label=Apache%202.0&logo=apache&logoColor=red
 )](https://www.apache.org/licenses/LICENSE-2.0.txt)
-[![Version](https://img.shields.io/github/v/tag/bkosaraju/inferencer?label=Current%20Version
-)]()
+[![Version](https://img.shields.io/github/v/tag/bkosaraju/inferencer?label=Current%20Version)]()
 
 # Inferencer a.k.a DataCurator
 
