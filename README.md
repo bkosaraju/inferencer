@@ -1,3 +1,6 @@
+[![bkosaraju](https://circleci.com/gh/bkosaraju/inferencer.svg?style=svg)](https://app.circleci.com/pipelines/github/bkosaraju/inferencer)
+[![codecov](https://codecov.io/gh/bkosaraju/inferencer/branch/development/graph/badge.svg?token=QHHLFEEHE2)](https://codecov.io/gh/bkosaraju/inferencer)
+
 # Inferencer a.k.a DataCurator
 
 inference noun:
